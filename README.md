@@ -1,13 +1,13 @@
 ## Installation
 ### Create .env
 
-`
+```
 APP_PORT=3000
 
 APP_OUTER_PORT=4050
 
 REACT_APP_API_URL='http://localhost:3050/api'
-`
+```
 
 ## Running docker
 ```bash
