@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { type RootState } from '../stores/auth.store'
 import { type User } from '../types/auth'
 
-const baseUrl = process.env.API_URL
+const baseUrl = process.env.REACT_APP_API_URL
 
 /**
  * User API

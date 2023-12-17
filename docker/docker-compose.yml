@@ -10,6 +10,8 @@ services:
       target: web
     env_file:
       - ../.env
+    environment:
+      REACT_APP_API_URL: ${REACT_APP_API_URL}
     volumes:
       - /app/node_modules/
     ports:

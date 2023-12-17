@@ -29,4 +29,4 @@ RUN npm run build
 # Переключаемся в созданного пользователя
 USER app
 
-CMD [ "npx", "serve", "-s", "build" ]
+CMD [ "npm", "start" ]

@@ -2,7 +2,7 @@ import axios, { AxiosError } from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type AuthLogin, type UserLogin } from '../types/auth'
 
-const baseUrl = process.env.API_URL
+const baseUrl = process.env.REACT_APP_API_URL
 
 /**
  * Login user
