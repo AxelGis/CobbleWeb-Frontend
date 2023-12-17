@@ -22,7 +22,11 @@ const Register = () => {
 
   const navigate = useNavigate()
 
-  const { register, handleSubmit } = useForm<UserRegister & { confirmPassword: string }>()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<UserRegister & { confirmPassword: string }>()
 
   useEffect(() => {
     if (userInfo !== null) navigate('/profile')
@@ -72,9 +76,10 @@ const Register = () => {
             required
             minLength={2} maxLength={25}
           />
+          {errors.firstName !== null && <p className='text-red-500'>{errors?.firstName?.message}</p>}
         </div>
         <div className="flex flex-col space-y-2">
-          <label htmlFor='firstName'>Last Name</label>
+          <label htmlFor='lastName'>Last Name</label>
           <input
             type='text'
             className="border border-gray-400 p-2 rounded"
@@ -82,6 +87,7 @@ const Register = () => {
             required
             minLength={2} maxLength={25}
           />
+          {errors.lastName !== null && <p className='text-red-500'>{errors?.lastName?.message}</p>}
         </div>
         <div className="flex flex-col space-y-2">
           <label htmlFor='email'>Email</label>
@@ -91,16 +97,21 @@ const Register = () => {
             {...register('email')}
             required
           />
+          {errors.email !== null && <p className='text-red-500'>{errors?.email?.message}</p>}
         </div>
         <div className="flex flex-col space-y-2">
           <label htmlFor='password'>Password</label>
           <input
             type='password'
             className="border border-gray-400 p-2 rounded"
-            {...register('password')}
+            {...register('password', {
+              validate: (value: string) =>
+                /\d/.test(value) || 'Password must contain at least one digit'
+            })}
             required
             minLength={6} maxLength={50}
           />
+          {errors.password !== null && <p className='text-red-500'>{errors?.password?.message}</p>}
         </div>
         <div className="flex flex-col space-y-2">
           <label htmlFor='email'>Confirm Password</label>

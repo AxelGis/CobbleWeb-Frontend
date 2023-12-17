@@ -24,7 +24,7 @@ const Profile = () => {
 
             <div className='m-auto max-w-lg'>
             {
-              userInfo?.photos !== null && userInfo?.photos !== undefined &&
+              userInfo?.photos !== null && userInfo?.photos !== undefined && userInfo?.photos.length > 0 &&
               <ImageGallery items={userInfo?.photos?.map((photo: Photo) => ({
                 thumbnail: photo.url,
                 original: photo.url
