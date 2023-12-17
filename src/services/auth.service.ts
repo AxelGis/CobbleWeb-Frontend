@@ -22,6 +22,7 @@ export const userLogin = createAsyncThunk(
       )
 
       // store user's token in local storage
+      // eslint-disable-next-line
       localStorage.setItem('access_token', data.access_token)
 
       return data

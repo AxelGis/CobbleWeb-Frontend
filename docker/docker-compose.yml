@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  web:
+    container_name: web
+    image: web
+    restart: unless-stopped
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+      target: web
+    env_file:
+      - ../.env
+    volumes:
+      - /app/node_modules/
+    ports:
+      - ${APP_OUTER_PORT}:${APP_PORT}

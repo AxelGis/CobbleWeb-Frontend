@@ -32,7 +32,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{ts,tsx} --fix"
+    "lint": "eslint src/**/*.{ts,tsx} --fix",
+    "docker": "docker compose --env-file .env -f docker/docker-compose.yml up --build -d"
   },
   "eslintConfig": {},
   "browserslist": {

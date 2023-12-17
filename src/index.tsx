@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import { store } from './stores/auth.store'
 
 const root = ReactDOM.createRoot(
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  // eslint-disable-next-line
   document.getElementById('root')!
 )
 root.render(
